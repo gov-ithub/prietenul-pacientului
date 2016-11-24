@@ -1,0 +1,19 @@
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "ubuntu", primary: true do |ubuntu|
+    ubuntu.vm.box = "bento/ubuntu-16.04"
+    ubuntu.vm.network "private_network", ip: "192.168.60.10"
+    ubuntu.vm.synced_folder File.dirname(__FILE__), "/vagrant"
+    ubuntu.vm.synced_folder "../ppacient-admin", "/var/www/ppacient-admin", create: true, group: "www-data", owner: "www-data"
+    ubuntu.vm.synced_folder "../ppacient-client", "/var/www/ppacient-client", create: true, group: "www-data", owner: "www-data"
+    ubuntu.vm.synced_folder "../ppacient-api", "/var/www/ppacient-api", create: true, group: "www-data", owner: "www-data"
+    ubuntu.vm.provision "shell", path: "provision/local/setup.sh"
+    ubuntu.vm.provider "virtualbox" do |v|
+      v.name = "ppacient"
+      v.memory = 1332
+    end
+  end
+
+end
