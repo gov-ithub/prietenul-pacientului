@@ -75,3 +75,7 @@ Dacă utilizatorii își completează în aplicație date personale (vârstă, s
 - măsuri de prevenție specifice grupurilor țintă
 
 
+## Cum poti intra in contact cu echipa?
+Prin email catre lucian.stuparu@ithub.gov.ro si stefan.popa@ithub.gov.ro sau mai rapid pe [Slack](https://govithub.slack.com/messages/socent/details/)
+
+**Made with :heart: by [GovITHub](http://ithub.gov.ro)**
